@@ -38,7 +38,7 @@
 <ul>
   <li>ChoreBlitz stores what it needs to run your household: who is in it, your rooms and chores, and who did what, when.</li>
   <li>The people in your household can see each other's names, avatars and chore activity. That is the point of the app.</li>
-  <li>We use one analytics tool, PostHog, to see which parts of the app people actually use. It receives a random account ID — never your name, your email, your household's name, or the names of your chores or mental-load tasks. It runs on European servers, and you can switch it off in Settings.</li>
+  <li>We use one analytics tool, PostHog, to see which parts of the app people actually use and to be told when it crashes. It receives a random account ID — never your name, your email, your household's name, or the names of your chores or mental-load tasks. It runs on European servers, and you can switch it off in Settings.</li>
   <li>Children's accounts send no analytics at all.</li>
   <li>We do not use advertising tools, we do not track you across other apps or websites, and we do not sell your data.</li>
   <li>Payments go through Apple. We never see your card details.</li>
@@ -105,7 +105,7 @@
 <tbody>
 <tr><td>Supabase</td><td>Database, sign-in and server functions</td><td>EU (Ireland)</td></tr>
 <tr><td>RevenueCat</td><td>Manages subscriptions: receives your purchase receipts, your random account ID, your household ID and basic device information</td><td>USA</td></tr>
-<tr><td>PostHog</td><td>Product analytics: receives a random account ID, your household ID, your role (adult or child), and which features were used. Never names, emails or the titles of chores or tasks.</td><td>EU (Germany)</td></tr>
+<tr><td>PostHog</td><td>Product analytics and crash reports: receives a random account ID, your household ID, your role (adult or child), which features were used, and technical error details with any user-entered text removed. Never names, emails or the titles of chores or tasks.</td><td>EU (Germany)</td></tr>
 <tr><td>Apple</td><td>App Store payments, Sign in with Apple, delivering push notifications</td><td>Apple's own terms</td></tr>
 <tr><td>Expo</td><td>Delivers push notifications to Apple, and app updates</td><td>USA</td></tr>
 </tbody></table></div>
@@ -118,6 +118,7 @@
 <p><strong>Children send nothing.</strong> If an account's role is child, no analytics events are sent from it at all.</p>
 <p><strong>You can turn it off.</strong> Settings › Stats &amp; data › *Share anonymous usage data*. It is on by default, the choice is yours alone rather than your household's, and switching it off stops the app sending anything further.</p>
 <p><strong>Where it goes:</strong> PostHog's European cloud. We do not enable session replay, so no recording of your screen is ever made.</p>
+<p><strong>Crash reports.</strong> If the app hits an error, PostHog also receives a report so we can fix it: the type of error and the technical stack trace — the names of our own code files and functions. Error descriptions are cleaned before sending, so anything that could be text you typed (a chore name, your household's name, an email address) is replaced with "&lt;redacted&gt;". Crash reports follow the same rules as everything else here: children's accounts send none, and turning off *Share anonymous usage data* stops them too.</p>
 <h2>How long we keep it</h2>
 <ul>
   <li><strong>While your account exists</strong>, we keep your data so the app works.</li>
