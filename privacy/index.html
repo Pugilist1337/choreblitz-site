@@ -30,7 +30,7 @@
 <body>
 <main>
 <h1>ChoreBlitz Privacy Policy</h1>
-<p>Effective date: 25 September 2026</p>
+<p>Effective date: 11 October 2026</p>
 <h2>Who we are</h2>
 <p>ChoreBlitz is made by Ryan Kohn, based in Sweden ("we", "us"). We are the data controller for the information described here.</p>
 <p>Questions or requests: <strong><a href="mailto:support@choreblitz.com">support@choreblitz.com</a></strong></p>
@@ -40,6 +40,7 @@
   <li>The people in your household can see each other's names, avatars and chore activity. That is the point of the app.</li>
   <li>We use one analytics tool, PostHog, to see which parts of the app people actually use and to be told when it crashes. It receives a random account ID — never your name, your email, your household's name, or the names of your chores or mental-load tasks. It runs on European servers, and you can switch it off in Settings.</li>
   <li>Children's accounts send no analytics at all.</li>
+  <li>Avatars are drawn by DiceBear. When an avatar is shown, DiceBear sees your device's IP address and how the avatar looks (hair, colours and so on) — never your name, email or account.</li>
   <li>We do not use advertising tools, we do not track you across other apps or websites, and we do not sell your data.</li>
   <li>Payments go through Apple. We never see your card details.</li>
   <li>Photos you take for Doom Pile stay on your phone. They are never uploaded.</li>
@@ -92,6 +93,8 @@
 <tr><td>Email / Sign in with Apple</td><td>To let you sign in again and recover your account</td><td>Contract</td></tr>
 <tr><td>Subscription status</td><td>To give your household access and handle renewals and restores</td><td>Contract</td></tr>
 <tr><td>Push token and preferences</td><td>To send the notifications you turned on</td><td>Consent (you can turn it off in iOS Settings)</td></tr>
+<tr><td>Analytics and crash reports (PostHog)</td><td>To see which features are used and to find and fix errors</td><td>Legitimate interest in improving the app; you can switch it off in Settings</td></tr>
+<tr><td>Avatar images (DiceBear)</td><td>To show the avatars you and your household chose</td><td>Performing our contract with you</td></tr>
 <tr><td>Technical logs, rate limits</td><td>Security, preventing abuse, fixing problems</td><td>Legitimate interest in a secure, working service</td></tr>
 </tbody></table></div>
 <p>We do not use your data for advertising, and we do not make automated decisions about you that have legal or similarly significant effects.</p>
@@ -105,7 +108,8 @@
 <tbody>
 <tr><td>Supabase</td><td>Database, sign-in and server functions</td><td>EU (Ireland)</td></tr>
 <tr><td>RevenueCat</td><td>Manages subscriptions: receives your purchase receipts, your random account ID, your household ID and basic device information</td><td>USA</td></tr>
-<tr><td>PostHog</td><td>Product analytics and crash reports: receives a random account ID, your household ID, your role (adult or child), which features were used, and technical error details with any user-entered text removed. Never names, emails or the titles of chores or tasks.</td><td>EU (Germany)</td></tr>
+<tr><td>PostHog</td><td>Product analytics and crash reports: receives a random account ID, your household ID, your role (adult or child), which features were used, basic device and app information (device model, iOS version, app version, language), and technical error details with any user-entered text removed. Never names, emails or the titles of chores or tasks.</td><td>EU (Germany)</td></tr>
+<tr><td>DiceBear</td><td>Draws profile avatars: when an avatar is shown, the app loads the image from api.dicebear.com, which receives your device's IP address and the avatar's appearance settings (such as hair style and colours). No name, email or account information is sent.</td><td>Germany (images delivered through a content delivery network)</td></tr>
 <tr><td>Apple</td><td>App Store payments, Sign in with Apple, delivering push notifications</td><td>Apple's own terms</td></tr>
 <tr><td>Expo</td><td>Delivers push notifications to Apple, and app updates</td><td>USA</td></tr>
 </tbody></table></div>
@@ -113,7 +117,7 @@
 <p>We do not sell or rent your data, and we do not share it with advertisers.</p>
 <h2>Analytics</h2>
 <p>We use <strong>PostHog</strong> (EU cloud) to understand how ChoreBlitz is used — which steps of setup people finish, which features get used, and where things go wrong. It helps us decide what to build and fix.</p>
-<p><strong>What it receives:</strong> a random account ID, your household ID, your role in the household, and the name of the thing that happened (for example "a chore was completed", with how many minutes it was estimated to take).</p>
+<p><strong>What it receives:</strong> a random account ID, your household ID, your role in the household, and the name of the thing that happened (for example "a chore was completed", with how many minutes it was estimated to take, or that turning on notifications failed and at which step). With each event the PostHog software also sends basic device and app information: device model, iOS version, app version and language. Your device's IP address reaches PostHog as part of every connection; we have set PostHog to discard it rather than store it or use it to estimate your location.</p>
 <p><strong>What it never receives:</strong> your name, your email, your household's name, the names of your chores, or the titles of your mental-load tasks. The app filters the data before sending, so only an approved list of fields can leave your device.</p>
 <p><strong>Children send nothing.</strong> If an account's role is child, no analytics events are sent from it at all.</p>
 <p><strong>You can turn it off.</strong> Settings › Stats &amp; data › *Share anonymous usage data*. It is on by default, the choice is yours alone rather than your household's, and switching it off stops the app sending anything further.</p>
